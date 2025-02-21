@@ -1,0 +1,7 @@
+@HostAddress = {{client.host}}
+@ProductId = {{variable.product.id}}
+
+GET {{HostAddress}}/products/{{ProductId}}
+Accept: application/json
+
+###

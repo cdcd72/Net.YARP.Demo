@@ -1,0 +1,44 @@
+services:
+  gateway-api:
+    build:
+      context: .
+      dockerfile: Gateways/GatewayApi/Dockerfile
+    container_name: gateway-api  
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    networks:
+      - proxybackend
+  products-api:
+    build:
+      context: .
+      dockerfile: Services/ProductsApi/Dockerfile
+    container_name: products-api
+    ports:
+      - "5100:8080"
+      - "5101:8081"
+    networks:
+      - proxybackend
+  sales-api:
+    build:
+      context: .
+      dockerfile: Services/SalesApi/Dockerfile
+    container_name: sales-api
+    ports:
+      - "5200:8080"
+      - "5201:8081"
+    networks:
+      - proxybackend
+  users-api:
+    build:
+      context: .
+      dockerfile: Services/UsersApi/Dockerfile
+    container_name: users-api
+    ports:
+      - "5300:8080"
+      - "5301:8081"
+    networks:
+      - proxybackend
+networks:
+  proxybackend:
+    driver: bridge

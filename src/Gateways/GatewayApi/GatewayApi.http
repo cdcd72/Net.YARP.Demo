@@ -1,0 +1,23 @@
+@ProductsApi_HostAddress = {{client.host}}/{{products-api.endpoint}}
+@ProductsApi_ProductId = {{products-api.variable.product.id}}
+
+@SalesApi_HostAddress = {{client.host}}/{{sales-api.endpoint}}
+@SalesApi_ProductId = {{sales-api.variable.sale.id}}
+
+@UsersApi_HostAddress = {{client.host}}/{{users-api.endpoint}}
+@UsersApi_ProductId = {{users-api.variable.user.id}}
+
+GET {{ProductsApi_HostAddress}}/products/{{ProductsApi_ProductId}}
+Accept: application/json
+
+###
+
+GET {{SalesApi_HostAddress}}/sales/{{SalesApi_ProductId}}
+Accept: application/json
+
+###
+
+GET {{UsersApi_HostAddress}}/users/{{UsersApi_ProductId}}
+Accept: application/json
+
+###

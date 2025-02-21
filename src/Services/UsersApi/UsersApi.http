@@ -1,0 +1,7 @@
+@HostAddress = {{client.host}}
+@UserId = {{variable.user.id}}
+
+GET {{HostAddress}}/users/{{UserId}}/
+Accept: application/json
+
+###
