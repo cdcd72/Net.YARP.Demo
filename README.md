@@ -6,6 +6,14 @@
 練習 YARP 實作 API Gateway。  
 To practice how YARP implement API Gateway.
 
+## 待實作
+
+- [ ] 認證授權
+- [ ] 健康檢查
+- [ ] 要求逾時
+- [ ] 分散追蹤
+- [ ] CORS
+
 ## 運行專案
 
 > 開啟終端機至專案根目錄並執行以下指令
