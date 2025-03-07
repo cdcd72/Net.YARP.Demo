@@ -9,6 +9,9 @@ To practice how YARP implement API Gateway.
 ## 待實作
 
 - [ ] 認證授權
+  - [ ] 外部與 API Gateway 的 JWT 驗證
+  - [ ] API Gateway 與其它 API 的 HMAC 驗證（補強僅在 API Gateway 驗證的漏洞，除此之外 API 也會被關聯起來）
+- [ ] 轉發
 - [ ] 健康檢查
 - [ ] 要求逾時
 - [ ] 分散追蹤
