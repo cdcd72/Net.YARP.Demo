@@ -1,7 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
+#region Config App
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#endregion
 
 var app = builder.Build();
 
@@ -23,7 +27,11 @@ app.MapGet("/products/{id}", (string id) =>
     .WithName("GetProduct")
     .WithOpenApi();
 
-app.UseHttpsRedirection();
+if (app.Environment.IsProduction())
+{
+    app.UseHsts();
+    app.UseHttpsRedirection();
+}
 
 app.Run();
 
