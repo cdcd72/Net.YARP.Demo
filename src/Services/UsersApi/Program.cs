@@ -1,9 +1,16 @@
+using Infra.Core.HealthCheck;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using UsersApi.HealthCheck;
+
 var builder = WebApplication.CreateBuilder(args);
 
 #region Config App
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services
+    .AddHealthChecks()
+    .AddCheck<TaskHealthCheck>("Task", tags: ["api"]);
 
 #endregion
 
@@ -13,6 +20,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+if (app.Environment.IsProduction())
+{
+    app.UseHsts();
+    app.UseHttpsRedirection();
 }
 
 app.MapGet("/users/{id}", (string id) =>
@@ -27,11 +40,10 @@ app.MapGet("/users/{id}", (string id) =>
     .WithName("GetUser")
     .WithOpenApi();
 
-if (app.Environment.IsProduction())
+app.MapHealthChecks("/health", new HealthCheckOptions
 {
-    app.UseHsts();
-    app.UseHttpsRedirection();
-}
+    ResponseWriter = HealthCheckHelper.CreateResponse
+});
 
 app.Run();
 

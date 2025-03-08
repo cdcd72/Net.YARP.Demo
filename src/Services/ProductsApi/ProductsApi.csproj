@@ -18,4 +18,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lib\InfrastructureCollection\src\Core\Infra.Core\Infra.Core.csproj" />
+  </ItemGroup>
+
 </Project>
