@@ -1,0 +1,3 @@
+[submodule "src/Lib/InfrastructureCollection"]
+	path = src/Lib/InfrastructureCollection
+	url = https://github.com/cdcd72/InfrastructureCollection.git
