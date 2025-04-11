@@ -8,14 +8,21 @@ To practice how YARP implement API Gateway.
 
 ## 待實作
 
-- [ ] 認證授權
+- [ ] 轉換（Transforms）
+- [ ] 負載平衡（Load Balancing）
+- [ ] 健康檢查（Health Checks）
+- [ ] 要求逾時（Request Timeouts）
+- [ ] 認證授權（Authentication and Authorization）
   - [ ] 外部與 API Gateway 的 JWT 驗證
   - [ ] API Gateway 與其它 API 的 HMAC 驗證（補強僅在 API Gateway 驗證的漏洞）
-- [ ] 轉發
-- [ ] 健康檢查
-- [ ] 要求逾時
-- [ ] 分散追蹤
-- [ ] CORS
+- [ ] 分散追蹤（Distributed tracing）
+- [ ] CORS（Cross-Origin Requests）
+
+## 額外實作
+
+- [ ] 利用 .NET 組態檔機制區分容器應使用哪些內容
+- [ ] 調整可以透過環境變數覆蓋組態（容器應用上較彈性）
+- [ ] Container 環境限制應與 Production 環境一致
 
 ## 運行專案
 
